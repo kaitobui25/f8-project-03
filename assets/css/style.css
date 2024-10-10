@@ -2,6 +2,41 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--pri-color: #2E80CE;
+	--sub-color: #10375C;
+}
+
+html {
+	/* Mặc định, trình duyệt có font-size cơ bản là 16px
+	Khi ta set font-size: 62.5%, nó sẽ tính: 16px * 62.5% = 10px
+	Điều này có nghĩa là 1rem bây giờ = 10px */
+	font-size: 62.5%;
+}
+
 body {
+	font-size: 1.6rem;
 	font-family: "Sora", sans-serif;
 }
+
+.container {
+	max-width: 1170px;
+}
+
+h2 {
+	color: var(--sub-color);
+	text-align: center;
+	font-size: 5rem;
+	font-weight: 600;
+	line-height: 1.2; /* 120% */
+	letter-spacing: -1px;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	min-width: 205px;
+}
+
