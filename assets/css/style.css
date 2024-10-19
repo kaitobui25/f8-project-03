@@ -1,42 +1,494 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-	--pri-color: #2E80CE;
-	--sub-color: #10375C;
+    --pri-color: #2e80ce;
+    --sub-color: #10375c;
+    --text-color: #c9d2da;
 }
 
 html {
-	/* Mặc định, trình duyệt có font-size cơ bản là 16px
+    /* Mặc định, trình duyệt có font-size cơ bản là 16px
 	Khi ta set font-size: 62.5%, nó sẽ tính: 16px * 62.5% = 10px
 	Điều này có nghĩa là 1rem bây giờ = 10px */
-	font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-	font-size: 1.6rem;
-	font-family: "Sora", sans-serif;
+    font-size: 1.6rem;
+    font-family: "Sora", sans-serif;
 }
-
+/* ================== Common ==================== */
 .container {
-	max-width: 1170px;
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
-	color: var(--sub-color);
-	text-align: center;
-	font-size: 5rem;
-	font-weight: 600;
-	line-height: 1.2; /* 120% */
-	letter-spacing: -1px;
+    color: var(--sub-color);
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.2; /* 120% */
+    letter-spacing: -1px;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color: #fff;
 }
 
-button {
-	min-width: 205px;
+.btn {
+    display: inline-block;
+    width: 205px;
+    max-width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
+    background: var(--pri-color);
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    border: none;
 }
 
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.desc {
+    font-weight: 300;
+}
+
+.section-heading {
+    color: --sub-color;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.2; /* 120% */
+    letter-spacing: -1px;
+}
+
+.section-des {
+    color: #575f66;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.66; /* 166.667% */
+}
+
+/* ================== Header ==================== */
+/* Top header */
+
+header {
+    height: 100vh;
+    background-color: #10375c;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo__text {
+    color: #fff;
+    text-align: right;
+    font-size: 1.8rem;
+    line-height: 0.77; /* 77.778% */
+}
+
+.logo__text::after {
+    margin-top: 3px;
+    content: "smile";
+    display: block;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.nav__list {
+    display: flex;
+    gap: 12px;
+}
+.nav__item {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.nav__link {
+    padding: 8px 15px;
+    color: inherit;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    color: #fff;
+    font-weight: 400;
+}
+
+.nav__link--active::before {
+    display: inline-block;
+    content: "";
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 1px solid #fff;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.header-action__login {
+    margin-right: 13px;
+    padding: 8px 15px;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.header-action__signup {
+    width: 104px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.6rem;
+}
+
+/* Hero */
+header .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 76px;
+}
+/* Content */
+.hero__content {
+    /*  */
+    width: 44.18%;
+}
+
+.hero__hedding {
+    color: #fff;
+    font-size: 7rem;
+    font-weight: 600;
+    line-height: 1.14; /* 114.286% */
+    letter-spacing: -1.4px;
+}
+
+.hero__des {
+    margin-top: 22px;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.66; /* 166.667% */
+}
+
+.hero__content .btn {
+    margin: 38px 38px 0 0;
+}
+
+.hero__phone-number {
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.66; /* 166.667% */
+}
+
+/* Figure */
+
+.hero__image {
+    display: flex;
+    align-items: center;
+}
+
+.hero__img:first-child {
+    width: 330px;
+    height: 540px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: -6px;
+    z-index: 1;
+}
+
+.hero__img:last-child {
+    /* position: absolute; */
+    width: 210px;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ================== Service ==================== */
+/* Header */
+.service {
+    text-align: center;
+    padding: 170px 0px;
+}
+
+.service__des {
+    max-width: 468px;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.service__media {
+    overflow: hidden;
+}
+
+.service__img {
+    width: 570px;
+    height: 570px;
+    object-fit: cover;
+    object-position: 0 0;
+    border-radius: 12px;
+    transition: 0.5s ease;
+}
+
+.service__img:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+    border-radius: 12px;
+}
+
+.service__info {
+    width: 470px;
+    text-align: left;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 18px 0px 14px;
+    transition: 0.5s;
+}
+
+.service-item:hover {
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.05);
+}
+
+.service-item:hover .service-item__path {
+    fill: #fff;
+    transition: 0.5s;
+}
+
+.service-item__circle {
+    fill: #eff6fd;
+}
+
+.service-item:hover .service-item__circle {
+    fill: var(--pri-color);
+    transition: 0.5s;
+}
+.service-item__path {
+    fill: var(--sub-color);
+}
+
+.service-item:hover .service-item__path {
+    fill: #fff;
+    transition: 0.5s;
+}
+
+.service-item__text {
+    margin-left: 3px;
+    text-align: left;
+}
+
+.service-item__title {
+    color: #10375c;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.service-item__des {
+    margin-top: 8px;
+    font-size: 1.6rem;
+}
+
+.service-item__btn {
+    margin-top: 55px;
+}
+
+/* ================== Application ==================== */
+.application__block {
+    display: flex;
+    align-items: center;
+    background: var(--pri-color);
+}
+
+.application__media {
+    width: 44%;
+    margin-top: -95px;
+    padding-left: 70px;
+}
+
+.application__img {
+    height: 522px;
+    display: block;
+}
+
+.application__info {
+    width: 56%;
+}
+
+.application__heading {
+    width: 489px;
+    color: #fff;
+}
+
+.application__des {
+    margin-top: 18px;
+    width: 586px;
+    color: #fff;
+}
+
+.application__row {
+    margin-top: 38px;
+    display: flex;
+    gap: 28px;
+}
+
+/* ================== Footer ==================== */
+footer {
+    margin-top: 170px;
+    padding: 100px 0px 42px;
+    background-color: var(--sub-color);
+}
+
+.footer__body {
+    display: flex;
+    justify-content: space-between;
+    gap: 78px;
+    margin-bottom: 28px;
+    font-family: "Open Sans";
+}
+
+.footer__logo-block {
+    display: flex;
+}
+
+.footer__logo-text {
+    margin-left: 6px;
+    width: 50px;
+    text-align: right;
+    font-family: Sora, sans-serif;
+}
+
+.footer__logo-textup {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.footer__logo-textdown {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.footer__des {
+    margin-top: 21px;
+}
+
+.footer__des {
+    width: 336px;
+    color: #a9b3bb;
+    font-size: 1.6rem;
+    line-height: 1.75; /* 175% */
+}
+
+.footer__heading {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer__list:not(:first-child) .footer__heading {
+    margin-top: 28px;
+}
+
+.footer__item {
+    margin-top: 10px;
+}
+
+.footer__link {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+
+}
+
+.footer__social {
+    margin-bottom: 28px;
+}
+
+.footer__des-small {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+    width: 273px;
+    margin-bottom: 10px;
+}
+
+.footer__input {
+    width: 212px;
+    height: 46px;
+    border-radius: 4px;
+    border: 1px solid #406181;
+}
+
+.footer__form {
+    display: flex;
+    align-items: center;
+}
+
+.footer__input {
+    padding: 10px;
+    background-color: var(--sub-color);
+}
+
+.footer__button {
+    margin-left: 12px;
+    width: 108px;
+    height: 46px;
+    line-height: 46px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Open Sans";
+    border-radius: 4px;
+
+}
+
+.footer__copyright::before {
+    display: block;
+    content: "";
+    border: 1px solid #406181;
+    margin-bottom: 28px;
+}
+
+.footer__copyright {
+    color: #AAB3BA;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 1.4rem;
+    line-height: 26px; /* 185.714% */
+}
